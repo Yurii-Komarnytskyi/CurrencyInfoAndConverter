@@ -1,0 +1,28 @@
+.converterWrapper {
+  display: flex;
+}
+
+.baseBox {
+  width: 21vw;
+  height: 20vh;  
+  margin: 2vh 0 0 0;
+  padding: 15px;
+}
+
+.fromBox {
+  background: #ffffff;
+}
+
+.toBox {
+  background: #00829b;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1em;
+  color: #363636;
+}
