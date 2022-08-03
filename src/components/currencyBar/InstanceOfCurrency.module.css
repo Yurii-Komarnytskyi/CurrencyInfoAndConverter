@@ -1,0 +1,25 @@
+.barWrapper{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 10px 0 10px 0;
+    width: 50%;
+    border-top: 1px solid #55557f;
+    border-bottom: 1px solid #55557f;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.3em;
+    background-color: #ffffff;
+}
+
+.currencyName{
+    user-select: none;
+    font-weight: 600;
+}
+
+.buy{
+    text-align: center;
+}
+
+.sale{
+    text-align: center;
+}
