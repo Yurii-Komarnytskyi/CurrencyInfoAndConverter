@@ -1,0 +1,40 @@
+.wrapper {
+  margin: 10px 0 10px 0;
+  border: 1.5px solid black;
+  border-radius: 5px;
+}
+
+.fancyInput {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-size: 1.2em;
+  background: transparent;
+
+  
+}
+
+.fancyInput:focus, select:focus {
+  outline: none;
+}
+
+.ddlList {
+  border: none;
+  border-left: 1px black solid;
+  background: transparent;
+  padding: 5px;
+  font-size: 1em;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
