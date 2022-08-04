@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ConverterBody from './components/converterBody/ConverterBody';
+import InstanceOfCurrency from './components/currencyBar/InstanceOfCurrency';
+import HeaderBar from './components/header/HeaderBar';
+import { NBU_URL, PRIVAT24_URL, useFetchAndUnifyListOfRates, } from './utils';
 
-function App() {
+
+
+const App: React.FC = () => {  
+
+  const [privat24GotFetched, privat24_rates] = useFetchAndUnifyListOfRates(PRIVAT24_URL);
+  const [nbuGotFetched, nbu_rates] = useFetchAndUnifyListOfRates(NBU_URL);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className='mainContainer'>
+      <HeaderBar />
+      {privat24GotFetched && <InstanceOfCurrency rates={privat24_rates}/> }
+      {nbuGotFetched && <ConverterBody rates={nbu_rates}/>}
+    </main>
   );
 }
 

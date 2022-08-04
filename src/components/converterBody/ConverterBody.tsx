@@ -8,14 +8,14 @@ import styles from './ConverterBody.module.css';
 type converterBodyProps = { rates: unifiedCurrencyData[] }
 
 const ConverterBody: React.FC<converterBodyProps> = ({rates}) => {
-  const CURRENT_DAY_MONTH_YEAR: string = `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`;
+  
   const [fromState, setFromState] = useState<conversionCurrency>({ccy: rates[0].ccy, rate: rates[0].rate, inputVal: ' ', gotFocused: false});
   const [toState, setToState ] = useState<conversionCurrency>({ccy: rates[0].ccy, rate: rates[0].rate, inputVal: ' ', gotFocused: false});
 
-  useEffect(() => {
-    console.log('fromState: ', fromState);
-    console.log('toState: ', toState);
-  }, [toState, fromState, toState.inputVal, fromState.inputVal])
+  // useEffect(() => {
+  //   console.log('fromState: ', fromState);
+  //   console.log('toState: ', toState);
+  // }, [toState, fromState, toState.inputVal, fromState.inputVal])
 
   return (
     <React.Fragment>

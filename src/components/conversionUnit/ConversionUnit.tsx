@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect } from 'react';
 import { conversionCurrency, unifiedCurrencyData } from '../../types';
-import { convertFromTo } from '../../utils';
+import { convertFromTo, removeDfltZeroState } from '../../utils';
 
 import styles from './ConversionUnit.module.css';
 
@@ -27,7 +27,7 @@ const ConversionUnit: React.FC<ConversionUnitProps> = (props: ConversionUnitProp
     updateInputState: Dispatch<SetStateAction<conversionCurrency>>,
     updateOppositeInputState: Dispatch<SetStateAction<conversionCurrency>>,
   ) => {
-    updateInputState(prev => ({ ...prev, inputVal: +event.target.value }));
+    updateInputState(prev => ({ ...prev, inputVal: removeDfltZeroState(event.target.value) }));
     updateOppositeInputState(prev => ({...prev, inputVal: convertFromTo(+event.target.value, inputState.rate, oppositeInputState.rate)}));
   }
 

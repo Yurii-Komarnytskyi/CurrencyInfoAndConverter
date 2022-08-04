@@ -46,6 +46,9 @@ export const useFetchAndUnifyListOfRates = (anUrlOfBankAPI: url):[boolean, unifi
   return [areDataBeingFetched, listOfFetched];
 }
 
-export const convertFromTo = (fromInp: number | ' ', fromRate: number, toRate: number): number => +(+fromInp * fromRate / toRate).toFixed(2);
+export const convertFromTo = (fromInp: number | ' ', fromRate: number, toRate: number): number | ' ' => (fromInp === ' ')? ' ' : +(fromInp * fromRate / toRate).toFixed(2);
 
 export const obtainCurrentDayMonthYear = (): string => `${(new Date().getDay() >= 10)? new Date().getDay(): '0' + new Date().getDay()}/${(new Date().getMonth() >= 10)? new Date().getMonth() + 1: '0' + (new Date().getMonth() + 1)}/${new Date().getFullYear()}`;
+
+export const removeDfltZeroState = (e: string): number | ' ' =>  (e === '')? ' ': +e;
+
